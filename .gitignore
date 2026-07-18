@@ -1,0 +1,7 @@
+# 公開しない内部ソース・成果物
+clients/
+review/
+review_gemini.gs
+バナー/
+assets/*_raw.png
+.DS_Store
