@@ -200,6 +200,53 @@ body{padding-bottom:76px}
 .pm2.sad .otx{font-size:7.5px;color:#9a9a97;line-height:1.8;font-weight:600}
 .pm2.sad .onote{margin-top:4px;font-size:7.5px;color:#b0736a;font-weight:800;line-height:1.7}
 .pm2.sad .oblank{font-size:6.5px;color:#c4c4c0;font-weight:700}
+
+/* ===== animations & hover (フルコース) ===== */
+@media (prefers-reduced-motion: no-preference){
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .75s cubic-bezier(.2,.75,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  /* hero entrance */
+  @keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  @keyframes popIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+  .hero .htag{animation:heroIn .6s .05s both}
+  .hero .hbig{animation:heroIn .7s .16s both}
+  .hero .hlead{animation:heroIn .7s .3s both}
+  .hero .hprice{animation:popIn .6s .46s both}
+  .hero .hcta{animation:heroIn .6s .6s both}
+  .hero .reassure{animation:heroIn .6s .72s both}
+  .hero .himg{animation:heroIn .8s .84s both}
+  /* CTA breathing glow */
+  @keyframes glow{0%,100%{box-shadow:0 6px 0 var(--orange-d)}50%{box-shadow:0 6px 0 var(--orange-d),0 0 22px rgba(255,122,47,.5)}}
+  .hero .hcta{animation:heroIn .6s .6s both, glow 2.6s 1.6s ease-in-out infinite}
+  /* sticky pulse ring */
+  @keyframes ring{0%,100%{box-shadow:0 4px 0 var(--orange-d)}50%{box-shadow:0 4px 0 var(--orange-d),0 0 0 7px rgba(255,122,47,.16)}}
+  .sticky a{animation:ring 2.6s ease-in-out infinite}
+  /* scroll cue on price zero */
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+  .price .z b{display:inline-block;animation:beat 2.2s ease-in-out infinite}
+}
+/* hover / micro-interactions (pointer devices) */
+@media (hover:hover){
+  .pkc,.wc,.qbox,.price,.trust,.chk,.baslide,.pm2,.reassure span,.trust .row,.price .feats span,.hbtn,.hcta,.submit,.sticky a,.logo{transition:transform .25s ease, box-shadow .25s ease, filter .2s ease, border-color .2s ease}
+  .pkc:hover,.wc:hover,.qbox:hover,.trust:hover,.price:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(10,90,85,.16)}
+  .chk:hover{transform:translateX(5px);border-color:var(--teal);box-shadow:0 10px 22px rgba(15,181,166,.14)}
+  .pkc:hover .ic{transform:scale(1.12) rotate(-4deg)}
+  .pkc .ic{transition:transform .3s ease}
+  .baslide:hover{box-shadow:0 16px 36px rgba(10,90,85,.14)}
+  .pm2:hover{transform:translateY(-3px) scale(1.015)}
+  .reassure span:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(4,50,45,.2)}
+  .trust .row:hover .ic{transform:scale(1.18)}
+  .trust .row .ic{transition:transform .25s ease}
+  .price .feats span:hover{color:var(--teal-d)}
+  .hbtn:hover,.hcta:hover,.submit:hover,.sticky a:hover{transform:translateY(-2px);filter:brightness(1.06) saturate(1.05)}
+  .hcta:hover{animation:none}
+  .logo:hover .k{transform:rotate(-6deg) scale(1.06)}
+  .logo .k{transition:transform .25s ease}
+  .af input{transition:border-color .2s ease, box-shadow .2s ease}
+  .af input:focus{box-shadow:0 0 0 4px rgba(15,181,166,.14)}
+  a[href^='#']{cursor:pointer}
+}
 </style>
 </head>
 <body>
@@ -372,6 +419,23 @@ body{padding-bottom:76px}
     fire();setTimeout(show,1600);
   });
   if(sink){sink.addEventListener('load',function(){if(submitted)show();});}
+})();
+</script>
+<script>
+(function(){
+  var mq=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)');
+  if(mq&&mq.matches)return;
+  var sel='.htitle,.chk,.pkc,.baslide,.wc,.trust,.price,.qbox,.fcard';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){el.classList.add('reveal');});
+  function showAll(){els.forEach(function(el){el.classList.add('show');});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){
+      ents.forEach(function(e){if(e.isIntersecting){e.target.style.transitionDelay=(Math.random()*90|0)+'ms';e.target.classList.add('show');io.unobserve(e.target);}});
+    },{rootMargin:'0px 0px -7% 0px',threshold:0.05});
+    els.forEach(function(el){io.observe(el);});
+    setTimeout(showAll,1700); // フェイルセーフ
+  }else{showAll();}
 })();
 </script>
 </body>
