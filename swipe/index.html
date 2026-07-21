@@ -25,9 +25,10 @@ img{max-width:100%;display:block}
 .brand .k{background:#fff;color:var(--teal-d);width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:13px}
 .pr{position:fixed;top:calc(15px + env(safe-area-inset-top));right:14px;z-index:35;font-size:10px;color:#fff;background:rgba(12,40,38,.34);backdrop-filter:blur(4px);border-radius:5px;padding:3px 8px}
 
-.deck{height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.deck{height:100dvh;overflow-y:auto;scroll-snap-type:y proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .deck::-webkit-scrollbar{display:none}
-.slide{min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:70px 24px 96px;position:relative}
+.slide{min-height:100svh;scroll-snap-align:start;scroll-snap-stop:normal;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:64px 22px 112px;position:relative}
+.slide.tall{justify-content:flex-start;padding-top:74px}
 .s-teal{background:linear-gradient(160deg,var(--teal-l),var(--teal-d))}
 .s-teal2{background:linear-gradient(160deg,#13b7a8,#087d72)}
 .s-white{background:#fff;color:var(--ink)}
@@ -48,9 +49,9 @@ img{max-width:100%;display:block}
 .tc{background:#f2f9f7;border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center;text-align:left}
 .tc .n{flex:0 0 auto;width:36px;height:36px;border-radius:9px;background:var(--teal);color:#fff;font-weight:900;display:grid;place-items:center;font-family:"M PLUS Rounded 1c"}
 .tc b{font-size:15px;color:var(--navy)}
-.whys{display:grid;gap:10px;margin-top:22px;width:100%;max-width:400px;text-align:left}
-.whyc{background:#f2f9f7;border-radius:12px;padding:14px 16px;color:var(--navy)}
-.whyc b{font-size:15px}.whyc span{display:block;font-size:13px;color:#5d6a6b;font-weight:500;margin-top:3px;line-height:1.7}
+.whys{display:grid;gap:8px;margin-top:16px;width:100%;max-width:400px;text-align:left}
+.whyc{background:#f2f9f7;border-radius:12px;padding:11px 14px;color:var(--navy)}
+.whyc b{font-size:14.5px}.whyc span{display:block;font-size:12.5px;color:#5d6a6b;font-weight:500;margin-top:2px;line-height:1.55}
 .whyc .n{color:var(--orange);font-weight:900;margin-right:6px}
 
 .pricebox{background:#fff;color:var(--navy);border-radius:20px;padding:24px 30px;margin-top:22px;box-shadow:0 16px 40px rgba(0,40,38,.3)}
@@ -156,7 +157,7 @@ img{max-width:100%;display:block}
     </div>
   </section>
 
-  <section class="slide s-teal2 dots">
+  <section class="slide s-teal2 dots tall">
     <div class="kick">こんな風に、変わります</div>
     <div class="big" style="font-size:clamp(22px,6.4vw,30px)">お店の“ネットの顔”を<br><span class="y">まるっと</span>作ります</div>
     <div class="ba">
@@ -175,7 +176,7 @@ img{max-width:100%;display:block}
     <div class="note">※表示イメージです</div>
   </section>
 
-  <section class="slide s-white">
+  <section class="slide s-white tall">
     <div class="kick round">なぜ、この価格で？</div>
     <div class="big" style="font-size:clamp(22px,6.2vw,29px)">安さには、<br><span class="u">ちゃんと理由</span>があります。</div>
     <div class="whys">
@@ -192,7 +193,7 @@ img{max-width:100%;display:block}
     <div class="chips"><span>設定ぜんぶおまかせ</span><span>ネット苦手でもOK</span></div>
   </section>
 
-  <section class="slide s-white">
+  <section class="slide s-white tall">
     <div class="kick round">安心してください</div>
     <div class="big" style="font-size:clamp(23px,6.4vw,30px)">だから、<br><span class="u">安心しておまかせ</span>を。</div>
     <div class="trust">
@@ -203,7 +204,7 @@ img{max-width:100%;display:block}
     <div class="prov">提供：株式会社XseedLab</div>
   </section>
 
-  <section class="slide s-navy dots" id="cta">
+  <section class="slide s-navy dots tall" id="cta">
     <div class="fwrap" id="fwrap">
       <div class="kick" style="text-align:center">まずは、初月0円で</div>
       <div class="big" style="font-size:clamp(23px,6.6vw,32px);margin-bottom:6px">はじめてみませんか。</div>
