@@ -183,6 +183,14 @@ footer .fl{font-weight:900;color:#fff;font-size:15px;margin-bottom:6px}footer a{
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:9px 16px;box-shadow:0 -4px 16px rgba(0,0,0,.06)}
 .sticky a{display:block;max-width:600px;margin:0 auto;text-align:center;background:linear-gradient(180deg,#ff924f,var(--orange));color:#fff;font-weight:900;font-size:16px;padding:13px;border-radius:12px;text-decoration:none;box-shadow:0 4px 0 var(--orange-d);line-height:1.4}
 .sticky a span{display:block;font-size:11px;font-weight:800;opacity:.95}
+
+.f2{margin-top:22px;padding-top:18px;border-top:1px dashed var(--line);text-align:left}
+.f2h{font-size:15px;font-weight:900;margin-bottom:12px;text-align:center}.f2h span{display:block;font-size:12px;font-weight:600;color:#7d8887;margin-top:3px}
+.f2 .af label{font-weight:700}
+.submit2{width:100%;border:1.5px solid var(--teal);border-radius:12px;padding:14px;background:#fff;color:var(--teal-d);font-weight:900;font-size:15.5px;cursor:pointer;font-family:inherit}
+.submit2[disabled]{opacity:.6}
+.f2done{margin-top:12px;text-align:center;font-size:14px;font-weight:800;color:var(--teal-d)}
+.hero-img img,.cmp .phone{cursor:pointer}
 </style>
 </head>
 <body>
@@ -348,28 +356,39 @@ footer .fl{font-weight:900;color:#fff;font-size:15px;margin-bottom:6px}footer a{
     <p class="fl">お店の情報をいただければ、こちらでHPの下書きを1枚おつくりしてお見せします。<br><b>見てから、続けるかどうかを決めてください。</b>無理な勧誘・しつこい営業はしません。</p>
     <form id="f" action="https://docs.google.com/forms/d/e/1FAIpQLSfLGuCYqNFj9br0vH36ohGWwiwXDo-ADk1X47Nq7dhaSzbR4w/formResponse" method="POST" target="gsink" novalidate>
       <div class="af"><label for="s1">店舗名<span class="req">必須</span></label><input id="s1" name="entry.1032007495" type="text" required placeholder="例）〇〇整体院／〇〇食堂"></div>
-      <div class="af"><label for="biz">業種<span class="req">必須</span></label><select id="biz" required>
-        <option value="" disabled selected>選択してください</option>
-        <option>居酒屋・飲食店</option><option>美容室・ネイル・まつげ</option><option>エステ・リラクゼーション</option>
-        <option>整体・整骨院・鍼灸</option><option>学習塾・教室・スクール</option><option>クリニック・歯科</option>
-        <option>士業・専門サービス</option><option>物販・小売</option><option>その他</option></select></div>
-      <div class="af"><label for="area">お店のエリア<span class="req">必須</span></label><input id="area" type="text" required placeholder="例）大阪市／世田谷区／福岡市中央区"></div>
       <div class="af"><label for="s2">お名前<span class="req">必須</span></label><input id="s2" name="entry.1182576338" type="text" required placeholder="例）山田 太郎"></div>
       <div class="af"><label for="s3">お電話番号<span class="req">必須</span></label><input id="s3" name="entry.1616360026" type="tel" inputmode="tel" required placeholder="例）090-1234-5678"></div>
-      <div class="af"><label for="s4">メールアドレス<span class="req">必須</span></label><input id="s4" name="entry.1218551347" type="email" inputmode="email" required placeholder="例）info@example.com"></div>
-      <div class="af"><label for="s5">連絡がつきやすい時間帯<span class="req">必須</span></label><select id="s5" name="entry.1420388143" required><option value="" disabled selected>選択してください</option><option>平日 午前（9〜12時）</option><option>平日 午後（12〜17時）</option><option>平日 夜（17〜20時）</option><option>土日祝</option><option>いつでもOK</option></select></div>
+      <input type="hidden" id="s4h" name="entry.1218551347" value="（未入力）">
       <input type="hidden" id="srcmemo" name="entry.1202707729" value="みつかる看板_診断LP3">
       <input type="hidden" name="entry.1561297601" value="上記に同意します">
       <input type="hidden" name="fvv" value="1"><input type="hidden" name="pageHistory" value="0">
       <label class="agree"><input id="agree" type="checkbox" required><span><a href="../privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>・<a href="../terms.html" target="_blank" rel="noopener">利用規約</a>に同意のうえ送信します（必須）</span></label>
       <button type="submit" class="submit"><span class="s">＼ 無料・見てから決めてOK ／</span>お店のHP案をつくってもらう →</button>
       <div class="aerr" id="err" hidden>未入力の必須項目があります。ご確認ください。</div>
-      <p class="aor">無料の試作をご覧いただいてからのご判断でOKです。<br>しつこい営業はしません。</p>
+      <p class="aor">入力はこの3つだけ。業種などは、あとから任意で教えてください。<br>しつこい営業はしません。</p>
     </form>
     <div class="thanks" id="thanks"><div class="ic">✓</div><h3>ありがとうございます！</h3>
       <p>このまま、打ち合わせの日程を<br>押さえていただけます。</p>
       <a class="tbook" id="tbook" href="https://timerex.net/s/s-sudo_482b/4cc88797/" target="_blank" rel="noopener"><span>＼ 空いている時間から選ぶだけ ／</span>日程を選ぶ →</a>
-      <p class="tnote">お急ぎでなければ、担当より折り返しご連絡いたします。<br>お店のHP案づくりについて、詳しくご案内します。</p></div>
+      <p class="tnote">お急ぎでなければ、担当より折り返しご連絡いたします。<br>お店のHP案づくりについて、詳しくご案内します。</p>
+      <form id="f2" class="f2" action="https://docs.google.com/forms/d/e/1FAIpQLSfLGuCYqNFj9br0vH36ohGWwiwXDo-ADk1X47Nq7dhaSzbR4w/formResponse" method="POST" target="gsink" novalidate>
+        <div class="f2h">お店のこと、もう少しだけ<span>任意・HP案の精度が上がります</span></div>
+        <div class="af"><label for="biz">業種</label><select id="biz">
+          <option value="" selected>選択してください</option>
+          <option>居酒屋・飲食店</option><option>美容室・ネイル・まつげ</option><option>エステ・リラクゼーション</option>
+          <option>整体・整骨院・鍼灸</option><option>学習塾・教室・スクール</option><option>クリニック・歯科</option>
+          <option>士業・専門サービス</option><option>物販・小売</option><option>その他</option></select></div>
+        <div class="af"><label for="area">お店のエリア</label><input id="area" type="text" placeholder="例）大阪市／世田谷区／福岡市中央区"></div>
+        <div class="af"><label for="s4">メールアドレス</label><input id="s4" name="entry.1218551347" type="email" inputmode="email" placeholder="例）info@example.com"></div>
+        <div class="af"><label for="s5">連絡がつきやすい時間帯</label><select id="s5" name="entry.1420388143"><option value="" selected>選択してください</option><option>平日 午前（9〜12時）</option><option>平日 午後（12〜17時）</option><option>平日 夜（17〜20時）</option><option>土日祝</option><option>いつでもOK</option></select></div>
+        <input type="hidden" id="c1" name="entry.1032007495"><input type="hidden" id="c2" name="entry.1182576338"><input type="hidden" id="c3" name="entry.1616360026">
+        <input type="hidden" id="srcmemo2" name="entry.1202707729" value="【補足】みつかる看板_診断LP3">
+        <input type="hidden" name="entry.1561297601" value="上記に同意します">
+        <input type="hidden" name="fvv" value="1"><input type="hidden" name="pageHistory" value="0">
+        <button type="submit" class="submit2">補足を送る（任意）</button>
+        <div class="f2done" id="f2done" hidden>✓ 補足を受け取りました。ありがとうございます。</div>
+      </form>
+    </div>
   </div>
   <iframe name="gsink" style="display:none" title="送信先" tabindex="-1" aria-hidden="true"></iframe>
 </article>
@@ -438,29 +457,49 @@ footer .fl{font-weight:900;color:#fff;font-size:15px;margin-bottom:6px}footer a{
   var sink=document.querySelector('iframe[name="gsink"]'),submitted=false;
   function compose(){
     var memo=document.getElementById('srcmemo');
-    var biz=document.getElementById('biz').value||'業種未選択';
-    var area=document.getElementById('area').value||'エリア未入力';
     var base=memo.value.indexOf('ズレ')>=0?memo.value:'みつかる看板_診断LP3 / 診断未回答';
-    memo.value=base+' / 業種:'+biz+' / エリア:'+area;
+    memo.value=base;
+    return base;
   }
   function fire(){
     if(typeof gtag==='function'){gtag('event','generate_lead',{method:'check_form',value:1,variant:VARIANT});}
     if(typeof fbq==='function'){try{fbq('track','Lead',{content_name:'mitsukaru_check3',variant:VARIANT});}catch(e){}}
     if(typeof clarity==='function'){try{clarity('set','lead','mitsukaru_check3');}catch(e){}}
   }
-  function show(){if(!submitted)return;f.style.display='none';thanks.style.display='block';try{thanks.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}}
+  var stage=0; /* 0=未送信 1=1段目送信中 2=1段目完了 3=補足送信中 4=補足完了 */
+  function show(){if(stage!==1)return;stage=2;f.style.display='none';thanks.style.display='block';try{thanks.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){}}
   f.addEventListener('submit',function(ev){
     if(!f.checkValidity()){ev.preventDefault();err.hidden=false;var b=f.querySelector(':invalid');if(b){try{b.focus();}catch(e){}}return;}
-    err.hidden=true;submitted=true;compose();
+    err.hidden=true;submitted=true;stage=1;compose();
     var b=f.querySelector('.submit');if(b){b.disabled=true;b.textContent='送信中…';}
     fire();setTimeout(show,1600);
   });
+  /* 2段目（任意の補足）＝同じフォームへ2行目として送る。1段目の店舗名・氏名・電話をコピーして紐づける */
+  var f2=document.getElementById('f2'),f2done=document.getElementById('f2done');
+  function showDone(){if(stage!==3)return;stage=4;f2.querySelectorAll('.af,.submit2').forEach(function(el){el.style.display='none';});f2done.hidden=false;}
+  if(f2){f2.addEventListener('submit',function(ev){
+    var biz=document.getElementById('biz').value,area=document.getElementById('area').value.trim(),mail=document.getElementById('s4').value.trim(),tm=document.getElementById('s5').value;
+    if(!biz&&!area&&!mail&&!tm){ev.preventDefault();return;}
+    document.getElementById('c1').value=document.getElementById('s1').value;
+    document.getElementById('c2').value=document.getElementById('s2').value;
+    document.getElementById('c3').value=document.getElementById('s3').value;
+    if(!mail){document.getElementById('s4').value='（未入力）';}
+    var base=compose();
+    document.getElementById('srcmemo2').value='【補足】'+base+' / 業種:'+(biz||'未選択')+' / エリア:'+(area||'未入力');
+    stage=3;var b=f2.querySelector('.submit2');if(b){b.disabled=true;b.textContent='送信中…';}
+    if(typeof gtag==='function'){gtag('event','lead_detail',{variant:VARIANT,biz:biz||'',has_mail:mail?1:0});}
+    setTimeout(showDone,1600);
+  });}
+  /* デッドクリック対策：ヒーロー画像・比較パートのスマホ画面タップで診断へ */
+  function goQuiz(from){var q=document.getElementById('quiz');if(q){q.scrollIntoView({behavior:'smooth',block:'start'});}if(typeof gtag==='function'){gtag('event','tap_to_quiz',{from:from,variant:VARIANT});}}
+  var hi=document.querySelector('.hero-img img');if(hi){hi.addEventListener('click',function(){goQuiz('hero');});}
+  var ph=document.querySelector('.cmp .phone');if(ph){ph.addEventListener('click',function(){goQuiz('phone');});}
   var tb=document.getElementById('tbook');
   if(tb){tb.addEventListener('click',function(){
     if(typeof gtag==='function'){gtag('event','schedule_click',{variant:VARIANT});}
     if(typeof fbq==='function'){try{fbq('trackCustom','ScheduleClick',{variant:VARIANT});}catch(e){}}
   });}
-  if(sink){sink.addEventListener('load',function(){if(submitted)show();});}
+  if(sink){sink.addEventListener('load',function(){if(stage===1)show();else if(stage===3)showDone();});}
 })();
 </script>
 </body>
